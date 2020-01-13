@@ -1,0 +1,58 @@
+<!--pages/user/user.wxml-->
+<view class='header'>
+  <view class='userinfo'>
+
+    <block wx:if="{{!hasUserInfo}}">
+      <view class='avatar'>
+        <image src='/image/default.png'></image>
+      </view>
+      <view class='info'>
+        <button class='title-button' open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信授权登录</button></view>
+    </block>
+    <block wx:else>
+      <view class='avatar'>
+        <image src='{{userInfo.avatarurl}}'></image>
+      </view>
+      <view class='info'>
+        <text class='name'>{{userInfo.nickname}}</text>
+
+        <text class='subname'>{{userInfo.province}}{{userInfo.city}}</text>
+      </view>
+    </block>
+
+
+    </view>
+    <view class='full-line'></view>
+    <view class='userdata'>
+      <view class='data'>
+        <text class='number'>{{userInfo.watch_times}}</text>
+        <text class='name'>查看房源</text>
+      </view>
+
+      <view class='data'>
+        <text class='number'>{{focusCount}}</text>
+        <text class='name'>关注房源</text>
+      </view>
+
+      <view class='data'>
+        <text class='number'>{{userInfo.view_times}}</text>
+        <text class='name'>实看房源</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='line'>
+  </view>
+
+  <view class='alllist'>
+    <view class='list' bindtap='bindFocus'>
+      <text>我的关注</text>
+      <image src='/image/more.png'></image>
+    </view>
+
+    <view class='list' bindtap='bindKefu'>
+      <text>联系客服</text>
+      <image src='/image/more.png'></image>
+    </view>
+
+  </view>

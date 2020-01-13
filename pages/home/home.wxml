@@ -1,0 +1,89 @@
+<!--pages/home/home.wxml-->
+<view>
+  <view class='header'>
+    <image mode="aspectFill" src='/image/bgg.jpeg'></image>
+  </view>
+  <view class='search'>
+    <view class='left'>
+      <text>无锡市</text>
+      <image src='/image/sanjiao.png'></image>
+      <view class='line'></view>
+    </view>
+    <view class='right'>
+      <image src='/image/search.png' bindtap='searchInput'></image>
+      <input placeholder='你想住在哪？' placeholder-class='input-pl' bindconfirm="searchInput" bindinput="bindKeyInput"></input>
+    </view>
+  </view>
+  <view class='choose'>
+    <view class='lab' bindtap='ershou'>
+      <view class='icon'>
+        <image src='/image/ershou.png'></image>
+      </view>
+      <view class='context'>
+        <text>二手房</text>
+      </view>
+    </view>
+
+    <view class='lab spacil-lab' bindtap='xinfang'>
+      <view class='icon spacil-icon2'>
+        <image src='/image/xinfang.png'></image>
+      </view>
+      <view class='context'>
+        <text>新房</text>
+      </view>
+    </view>
+
+    <view class='lab spacil-lab' bindtap='zufang'>
+      <view class='icon spacil-icon3'>
+        <image src='/image/zufang.png'></image>
+      </view>
+      <view class='context'>
+        <text>租房</text>
+      </view>
+    </view>
+
+    <view class='lab spacil-lab' bindtap='shangpu'>
+      <view class='icon spacil-icon4'>
+        <image src='/image/shangpu.png'></image>
+      </view>
+      <view class='context'>
+        <text>商铺</text>
+      </view>
+    </view>
+  </view>
+  <view class='title'>
+    <text>推荐房源</text>
+  </view>
+  <view class='list'>
+    <block wx:for="{{houseList}}" wx:key="*this">
+      <view class='line' bindtap='houseDetail' data-house_id='{{item.house_id}}'>
+        <view class='left'>
+          <image mode="aspectFill" src='{{item.image.image_url}}'></image>
+        </view>
+        <view class='right'>
+          <view class='name'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='subname'>
+            <text>{{item.region}} | {{item.community}} | {{item.model}} | {{item.area}}</text>
+          </view>
+          <view class='spanlist'>
+            <block wx:for="{{item.label_array}}"  wx:key="sonkey">
+              <view class='span' style='background-color:{{item.background_color}};border: 0;'>
+                <text style='color: {{item.font_color}};'>{{item.name}}</text>
+              </view>
+            </block>
+          </view>
+          <view class='money'>
+            <text class='left'>{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='fenge'></view>
+    </block>
+
+  </view>
+  <!-- <view class='nomore'>
+    <text>查看更多房源</text>
+  </view> -->
+</view>

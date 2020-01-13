@@ -1,0 +1,177 @@
+<!--pages/info/info.wxml-->
+<block wx:if="{{houseInfo.type_id == 1}}">
+  <view class='main'>
+    <view class='title'>
+      <text>基础属性</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>销售情况：</text>
+      <text class='rightname'>{{houseInfo.housevice.salestatus}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>最新开盘：</text>
+      <text class='rightname'>{{houseInfo.housevice.gmt_opening}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>交房时间：</text>
+      <text class='rightname'>{{houseInfo.housevice.gmt_delivery}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>楼盘地址：</text>
+      <text class='rightname'>{{houseInfo.housevice.address}}</text>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='main'>
+    <view class='title'>
+      <text>销售信息</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>参考价格：</text>
+      <text class='rightname'>{{houseInfo.price}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>最低首付：</text>
+      <text class='rightname'>{{houseInfo.housevice.downpayment}}万</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>在售户型：</text>
+      <text class='rightname'>{{houseInfo.model}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>销售地址：</text>
+      <text class='rightname'>{{houseInfo.housevice.address}}</text>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='main'>
+    <view class='title'>
+      <text>建筑规划</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>建筑类型：</text>
+      <text class='rightname'>{{houseInfo.floortype}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>产权年限：</text>
+      <text class='rightname'>{{houseInfo.housevice.buildingtime}}年</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>装修类型：</text>
+      <text class='rightname'>{{houseInfo.decorate}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>开发商名：</text>
+      <text class='rightname'>{{houseInfo.housevice.developers}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>规划用户：</text>
+      <text class='rightname'>{{houseInfo.housevice.resident}}户</text>
+    </view>
+    <!-- <view class='content'>
+      <text class='leftname'>楼层状况：</text>
+      <text class='rightname'>{{houseInfo.housevice.sumfloor}}</text>
+    </view> -->
+    <view class='content'>
+      <text class='leftname'>工程进度：</text>
+      <text class='rightname'>{{houseInfo.housevice.progress}}</text>
+    </view>
+  </view>
+  <view class='line'></view>
+
+  <view class='main'>
+    <view class='title'>
+      <text>物业信息</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>物业费用：</text>
+      <text class='rightname'>{{houseInfo.housevice.tenement_price}}元/㎡/月</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>物业公司：</text>
+      <text class='rightname'>{{houseInfo.housevice.tenement}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>车位数量：</text>
+      <text class='rightname'>{{houseInfo.housevice.carnumber}}个</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>车位比例：</text>
+      <text class='rightname'>{{houseInfo.housevice.carscale}}</text>
+    </view>
+  </view>
+  <view class='footer'>
+        
+  </view>
+</block>
+<block wx:else>
+  <view class='main'>
+    <view class='title'>
+      <text>基础属性</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>房源户型：</text>
+      <text class='rightname'>{{houseInfo.model}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>建筑面积：</text>
+      <text class='rightname'>{{houseInfo.area}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>套内面积：</text>
+      <text class='rightname'>{{houseInfo.housevice.within_area}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>户型结构：</text>
+      <text class='rightname'>{{houseInfo.floortype}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>梯户比例：</text>
+      <text class='rightname'>{{houseInfo.housevice.ladder}}</text>
+    </view>
+  </view>
+
+  <view class='line'></view>
+
+
+  <view class='main'>
+    <view class='title'>
+      <text>交易属性</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>上次交易：</text>
+      <text class='rightname'>{{houseInfo.housevice.lastdeal}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>房屋年限：</text>
+      <text class='rightname'>{{houseInfo.housevice.buildingtime}}年</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>房屋用途：</text>
+      <text class='rightname'>{{houseInfo.purpose}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>产权所属：</text>
+      <text class='rightname'>{{houseInfo.ownership}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>抵押信息：</text>
+      <text class='rightname'>{{houseInfo.housevice.pledge}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>鹏辉编号：</text>
+      <text class='rightname'>{{houseInfo.fangyouid}}</text>
+    </view>
+    <view class='content'>
+      <text class='leftname'>土地年限：</text>
+      <text class='rightname'>详见业主土地证明材料或相关政府部门登记文件</text>
+    </view>
+  </view>
+  <view class='footer'>
+        
+  </view>
+</block>

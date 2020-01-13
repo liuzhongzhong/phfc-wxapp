@@ -1,0 +1,42 @@
+/* pages/basic/basic.wxss */
+
+.main {
+  margin-top: 45rpx;
+  width: 670rpx;
+  margin-left: 40rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #333333;
+}
+
+.subtitle {
+  margin-top: 35rpx;
+}
+
+.subname {
+
+}
+
+.subname text {
+  font-size: 32rpx;
+  color: #888888;
+}
+
+.subcontent {
+  margin-top: 22rpx;
+}
+
+.subcontent text {
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.line {
+  width: 100%;
+  height: 1rpx;
+  background-color: #EAEAEA;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}

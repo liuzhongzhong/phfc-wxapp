@@ -1,0 +1,282 @@
+/* pages/home/home.wxss */
+
+.header {
+  width: 750rpx;
+  height: 390rpx;
+}
+
+.header image {
+  width: 750rpx;
+  height: 390rpx;
+}
+
+.search {
+  background-color: white;
+  width: 690rpx;
+  height: 92rpx;
+  top: 42rpx;
+  position: absolute;
+  margin-left: 30rpx;
+  border-radius: 4rpx;
+  display: flex;
+}
+
+.search .left {
+  margin-left: 25rpx;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 140rpx;
+}
+
+.search .left text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.search .left image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 8rpx;
+}
+
+.search .left .line {
+  width: 1rpx;
+  height: 42rpx;
+  background-color: #e5e5e5;
+  margin-left: 28rpx;
+}
+
+.search .right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+}
+
+.search .right image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.search .right text {
+  font-size: 26rpx;
+  color: #b2b2b2;
+  margin-left: 15rpx;
+}
+
+.search .right input {
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 15rpx;
+  width: 400rpx;
+}
+
+.input-pl {
+  font-size: 26rpx;
+  color: #b2b2b2;
+  margin-left: 15rpx;
+}
+
+.choose {
+  margin-top: 40rpx;
+  width: 750rpx;
+  display: flex;
+}
+
+.choose .lab {
+  margin-left: 65rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose .lab .icon {
+  background-color: #58c087;
+  border-radius: 100%;
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose .lab .icon image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.choose .lab .context {
+  margin-top: 15rpx;
+}
+
+.choose .lab .context text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.choose .spacil-lab {
+  margin-left: 86rpx;
+}
+
+.choose .lab .spacil-icon2 {
+  background-color: #f09062;
+}
+
+.choose .lab .spacil-icon3 {
+  background-color: #f4b565;
+}
+
+.choose .lab .spacil-icon4 {
+  background-color: #e67a77;
+}
+
+.title {
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+}
+
+.title text {
+  font-size: 40rpx;
+  color: #333;
+}
+
+.list {
+  margin-top: 10rpx;
+}
+
+.list .line {
+  margin-top: 30rpx;
+  width: 690rpx;
+  margin-left: 30rpx;
+  display: flex;
+}
+
+.list .line .left {
+  width: 220rpx;
+}
+
+.list .line .left image {
+  width: 220rpx;
+  height: 160rpx;
+}
+
+.list .line .right {
+  margin-left: 20rpx;
+}
+
+.list .line .right .name {
+  line-height: 40rpx;
+}
+
+.list .line .right .name text {
+  font-size: 34rpx;
+  color: #333;
+}
+
+.list .line .right .subname {
+  margin-top: -5rpx;
+  margin-bottom: 5rpx;
+}
+
+.list .line .right .subname text {
+  font-size: 26rpx;
+  color: #888;
+}
+
+.list .line .right .spanlist {
+  display: flex;
+}
+
+.list .line .right .span {
+  height: 30rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #b2b2b2;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list .line .right .span text {
+  font-size: 22rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  color: #b2b2b2;
+}
+
+.list .line .right .money {
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.list .line .right .money .left {
+  font-size: 32rpx;
+  font-weight: bolder;
+  color: #e8624c;
+  width: 130rpx;
+}
+
+.list .line .right .money .right {
+  font-size: 26rpx;
+  color: #b2b2b2;
+}
+
+.list .line .right .spanlist .dt-span {
+  border: 0;
+  background-color: #e8f2fe;
+}
+
+.list .line .right .spanlist .dt-span .dt-text {
+  color: #6eabf7;
+}
+
+.list .line .right .spanlist .ss-span {
+  border: 0;
+  background-color: #e4f4ed;
+}
+
+.list .line .right .spanlist .ss-span .ss-text {
+  color: #60ba89;
+}
+
+.list .line .right .spanlist .fz-span {
+  border: 0;
+  background-color: #faf0e1;
+}
+
+.list .line .right .spanlist .fz-span .fz-text {
+  color: #e6a349;
+}
+
+.list .line .right .spanlist .mw-span {
+  border: 0;
+  background-color: #e5f4f7;
+}
+
+.list .line .right .spanlist .mw-span .mw-text {
+  color: #62bbca;
+}
+
+.fenge {
+  width: 720rpx;
+  height: 1rpx;
+  background-color: #e5e5e5;
+  margin-top: 26rpx;
+  margin-left: 30rpx;
+}
+
+.nomore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+  margin-bottom: 150rpx;
+}
+
+.nomore text {
+  color: #b2b2b2;
+  font-size: 24rpx;
+}

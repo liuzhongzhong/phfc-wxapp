@@ -1,0 +1,245 @@
+<!--pages/list/list.wxml-->
+<view class='header'>
+  <view class='search'>
+    <view class='left' bindtap='searchButton'>
+      <image src='/image/search.png'></image>
+    </view>
+    <view class='right'>
+      <input placeholder="请输入小区/商圈/地铁" placeholder-class="search-input" bindinput="bindKeyInput" value='{{search_input}}' bindconfirm="searchButton"></input>
+    </view>
+  </view>
+</view>
+
+<view class='filter'>
+  <view class='span' bindtap="choiceItem" data-item="1">
+    <text>区域</text>
+    <block wx:if="{{chioceArea}}">
+      <image src='/image/sanjiao3.png'></image>
+    </block>
+    <block wx:else>
+      <image src='/image/sanjiao2.png'></image>
+    </block>
+
+  </view>
+  <view class='span' bindtap="choiceItem" data-item="2">
+    <text>价格</text>
+    <block wx:if="{{chiocePrice}}">
+      <image src='/image/sanjiao3.png'></image>
+    </block>
+    <block wx:else>
+      <image src='/image/sanjiao2.png'></image>
+    </block>
+  </view>
+  <view class='span' bindtap="choiceItem" data-item="3">
+    <text>房型</text>
+    <block wx:if="{{chioceType}}">
+      <image src='/image/sanjiao3.png'></image>
+    </block>
+    <block wx:else>
+      <image src='/image/sanjiao2.png'></image>
+    </block>
+  </view>
+  <view class='span' bindtap="choiceItem" data-item="4">
+    <text>其它</text>
+    <block wx:if="{{chioceOther}}">
+      <image src='/image/sanjiao3.png'></image>
+    </block>
+    <block wx:else>
+      <image src='/image/sanjiao2.png'></image>
+    </block>
+  </view>
+</view>
+
+<view class="area-list{{!chioceArea?' chioce-list-hide':' chioce-list-show'}}">
+
+  <view class="district-left">
+    <view wx:for="{{districtList}}" catchtap="selectDistrictParent" data-index="{{index}}" class="district-parent{{index==activeDistrictParentIndex||index==0&&activeDistrictParentIndex==-1?' district-parent-active':''}}" hover-class="click-once" wx:key="*this">{{item.district_name}}</view>
+  </view>
+  <view class="district-right">
+    <scroll-view scroll-y class="scroll-district" scroll-top="{{scrollTop}}" scroll-into-view="{{scrollIntoView}}">
+      <view id="{{index}}" wx:for="{{districtList[activeDistrictParentIndex==-1?0:activeDistrictParentIndex].district_children_list}}" catchtap="selectDistrictChildren" data-index="{{index}}" class="district-children{{index==activeDistrictChildrenIndex||index==0&&activeDistrictChildrenIndex==-1?' district-parent-active':''}}"
+        hover-class="click-once" wx:key="*this">{{item.district_name}}</view>
+
+    </scroll-view>
+  </view>
+</view>
+
+<view class="price-list{{!chiocePrice?' chioce-list-hide':' chioce-list-show'}}">
+  <block wx:for="{{priceList}}" wx:for-index="fatherIndex" wx:key="*this">
+    <view class='price-main'>
+      <view class='price-title'>
+        <text>{{item.title}}</text>
+      </view>
+
+      <view class='price-input'>
+        <view class='input-left'>
+          <input placeholder="最低价格" placeholder-class="price-input-placeholder" bindinput="bindKeyInputLow" value='{{priceLow}}'></input>
+        </view>
+        <view class='small-line'>
+          <view class='gang'></view>
+        </view>
+        <view class='input-right'>
+          <input placeholder="最高价格" placeholder-class="price-input-placeholder" bindinput="bindKeyInputHigh" value='{{priceHigh}}'></input>
+        </view>
+      </view>
+      <view class='price-span-list'>
+        <view class='list-line'>
+          <block wx:for="{{item.span}}" wx:for-index="sonIndex" wx:key="*this">
+            <block wx:if="{{item.status}}">
+              <view class='choice-span-check' bindtap='bindPriceChoiceSpan' data-father='{{fatherIndex}}' data-son='{{sonIndex}}'>
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class='choice-span' bindtap='bindPriceChoiceSpan' data-father='{{fatherIndex}}' data-son='{{sonIndex}}'>
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </view>
+      <view class='choice-line'></view>
+    </view>
+  </block>
+
+  <view class='choice-button'>
+    <view class='button-left' bindtap='priceNoButton'>
+      <text>不限条件</text>
+    </view>
+    <view class='button-right' bindtap='priceSureButton'>
+      <text>确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="type-list{{!chioceType?' chioce-list-hide':' chioce-list-show'}}">
+  <block wx:for="{{typeList}}" wx:for-index="fatherIndex" wx:key="*this">
+    <view class='price-main'>
+      <view class='price-title'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='price-span-list'>
+        <view class='list-line'>
+          <block wx:for="{{item.span}}" wx:for-index="sonIndex" wx:key="*this">
+            <block wx:if="{{item.status}}">
+              <view class='choice-span-check' bindtap='bindTypeChoiceSpan' data-father='{{fatherIndex}}' data-son='{{sonIndex}}'>
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class='choice-span' bindtap='bindTypeChoiceSpan' data-father='{{fatherIndex}}' data-son='{{sonIndex}}'>
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </view>
+      <view class='choice-line'></view>
+    </view>
+  </block>
+
+  <view class='choice-button'>
+    <view class='button-left' bindtap='typeNoButton'>
+      <text>不限条件</text>
+    </view>
+    <view class='button-right' bindtap='typeSureButton'>
+      <text>确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="other-list{{!chioceOther?' chioce-list-hide':' chioce-list-show'}}">
+  <block wx:for="{{otherList}}" wx:for-index="fatherIndex" wx:key="*this">
+    <view class='price-main'>
+      <view class='price-title'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='price-span-list'>
+        <view class='list-line'>
+          <block wx:for="{{item.span}}" wx:for-index="sonIndex" wx:key="*this">
+            <block wx:if="{{item.status}}">
+              <view class='choice-span-check' bindtap='bindOtherChoiceSpan' data-father='{{fatherIndex}}' data-son='{{sonIndex}}'>
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class='choice-span' bindtap='bindOtherChoiceSpan' data-father='{{fatherIndex}}' data-son='{{sonIndex}}'>
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </view>
+      <view class='choice-line'></view>
+    </view>
+  </block>
+
+  <view class='choice-button spacil-button'>
+    <view class='button-left' bindtap='otherNoButton'>
+      <text>不限条件</text>
+    </view>
+    <view class='button-right' bindtap='otherSureButton'>
+      <text>确定</text>
+    </view>
+  </view>
+</view>
+
+<view bindtap="hideAllChioce" class="mask" hidden="{{!chioceArea&&!chiocePrice&&!chioceType&&!chioceOther}}">
+</view>
+
+
+<view class='list'>
+  <block wx:if="{{houseList}}">
+    <block wx:for="{{houseList}}" wx:key="*this">
+      <view class='line' bindtap='houseDetail' data-house_id='{{item.house_id}}'>
+        <view class='left'>
+          <image mode="aspectFill" src='{{item.image.image_url}}'></image>
+        </view>
+        <view class='right'>
+          <view class='name'>
+            <text>{{item.name}}</text>
+          </view>
+          <block wx:if="{{item.type_id == 1}}">
+            <view class='subname'>
+              <text>{{item.region}} | {{item.model}}</text>
+            </view>
+          </block>
+          <block wx:elif="{{item.type_id == 4}}">
+            <view class='subname'>
+              <text>{{item.region}} | {{item.area}}</text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='subname'>
+              <text>{{item.region}} | {{item.community}} | {{item.model}} | {{item.area}}</text>
+            </view>
+          </block>
+
+          <view class='spanlist'>
+            <block wx:for="{{item.label_array}}" wx:key="*this">
+              <view class='span' style='background-color:{{item.background_color}};border: 0;'>
+                <text style='color: {{item.font_color}};'>{{item.name}}</text>
+              </view>
+            </block>
+          </view>
+          <view class='money'>
+            <text class='left'>{{item.price}}</text>
+            <!-- <text class='right'>23232元/平</text> -->
+          </view>
+        </view>
+      </view>
+      <view class='fenge'></view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class='list'>
+      <view class='none'>
+        <image src='/image/none.png'></image>
+        <text>暂无该类型房源</text>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- <view class='nomore'>
+  <text>查看更多房源</text>
+</view> -->

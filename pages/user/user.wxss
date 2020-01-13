@@ -1,0 +1,113 @@
+/* pages/user/user.wxss */
+.header {
+  width:750rpx;
+  height:388rpx;
+}
+
+.userinfo {
+  width: 695rpx;
+  height: 208rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 55rpx;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar image {
+  width:110rpx;
+  height:110rpx;
+  border-radius: 100%;
+  
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 45rpx;
+}
+
+.info .name {
+  font-size: 34rpx;
+  color: #333333;
+}
+
+.info .subname {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.full-line {
+  width: 750rpx;
+  height: 1rpx;
+  background-color: #EAEAEA;
+}
+
+.userdata {
+  display: flex;
+  width: 750rpx;
+  height: 175rpx;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data .number {
+  color: #333333;
+  font-size: 48rpx;
+}
+
+.data .name {
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.line {
+  width:750rpx;
+  height:20rpx; 
+  background:rgba(245,245,245,1);
+}
+
+.list {
+  width: 670rpx;
+  margin-left: 40rpx;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx #e5e5e5 solid;
+  justify-content: space-between;
+}
+
+.list text {
+  color: #333333;
+  font-size: 32rpx;
+}
+
+.list image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.title-button {
+  font-size: 34rpx;
+  color: #333333;
+  background-color: #ffffff;
+  margin-left: -30rpx;
+  border: none;
+}
+
+button::after {
+    border: none;
+}

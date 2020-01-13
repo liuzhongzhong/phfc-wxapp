@@ -1,0 +1,39 @@
+/* pages/info/info.wxss */
+.main {
+  margin-top:45rpx;
+  margin-left: 40rpx;
+  width: 670rpx;
+}
+
+.title text {
+  font-size: 36rpx;
+  color: #333333;
+}
+
+.content {
+  margin-top: 40rpx;
+}
+
+.leftname {
+  color: #888888;
+  font-size: 32rpx;
+}
+
+.rightname {
+  color: #333333;
+  font-size: 32rpx;
+}
+
+.line {
+  width: 670rpx;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+  margin-bottom: 45rpx;
+  background-color: #EAEAEA;
+  height: 1rpx;
+}
+
+.footer {
+  height: 50rpx;
+  width: 100%;
+}

@@ -1,0 +1,85 @@
+<!--pages/basic/basic.wxml-->
+<view class='main'>
+  <view class='title'>
+    <text>房源介绍</text>
+  </view>
+  <block wx:if="{{houseInfo.housevice.model_introduce}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>户型介绍</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.model_introduce}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+
+  <block wx:if="{{houseInfo.housevice.decorate_description}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>装修描述</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.decorate_description}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+
+  <block wx:if="{{houseInfo.housevice.detail_taxes}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>税费解析</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.detail_taxes}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+  <block wx:if="{{houseInfo.housevice.detail_traffic}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>交通出行</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.detail_traffic}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+  <block wx:if="{{houseInfo.housevice.appropriate_crowd}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>适宜人群</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.appropriate_crowd}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+  <block wx:if="{{houseInfo.housevice.detail_surrounding}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>周边配套</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.detail_surrounding}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+  <block wx:if="{{houseInfo.housevice.detail_selling}}">
+    <view class='subtitle'>
+      <view class='subname'>
+        <text>核心卖点</text>
+      </view>
+      <view class='subcontent'>
+        <text>{{houseInfo.housevice.detail_selling}}</text>
+      </view>
+      <view class='line'></view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/focus/focus",
+    "pages/user/user",
+    "pages/list/list",
+    "pages/detail/detail",
+    "pages/basic/basic",
+    "pages/info/info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "鹏辉房产",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ff7e00",
+    "backgroundColor": "#FFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/image/housec.png",
+        "iconPath": "/image/house.png",
+        "pagePath": "pages/home/home",
+        "text": "房源"
+      },
+      {
+        "selectedIconPath": "/image/minec.png",
+        "iconPath": "/image/mine.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
